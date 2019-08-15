@@ -10,7 +10,7 @@ sudo pacman -S ttf-joypixels ttf-croscore noto-fonts-cjk noto-fonts \
     ncmpcpp feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf \
     diff-so-fancy zsh-autosuggestions zsh-syntax-highlighting exa \
     xorg-server xorg-xinit xorg-xprop pulseaudio-alsa libnotify fd \
-    nnn bat ripgrep httpie sxiv
+    nnn bat ripgrep httpie sxiv firefox
 
 # Link dash to /bin/sh for performance boost.
 # Then link several font config files for better font display.
