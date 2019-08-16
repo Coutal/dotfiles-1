@@ -28,8 +28,7 @@ sudo install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
 # Make several folders, including a Music and Images folder.
 mkdir -p $LINKDOT/config/mpd/playlists \
-    ~/.config ~/.aurpkgs ~/Music \
-    ~/Images/Captures ~/Images/Wallpapers
+    ~/.config ~/.aurpkgs ~/Images/Captures
 
 # Clone the aur packages being installed. Polybar and Oh-My-Zsh
 git clone https://aur.archlinux.org/oh-my-zsh-git.git ~/.aurpkgs/oh-my-zsh-git
