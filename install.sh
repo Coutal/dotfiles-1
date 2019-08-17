@@ -10,7 +10,7 @@ sudo pacman -S ttf-joypixels ttf-croscore noto-fonts-cjk noto-fonts \
     ncmpcpp feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf \
     diff-so-fancy zsh-autosuggestions zsh-syntax-highlighting exa \
     xorg-server xorg-xinit xorg-xprop pulseaudio-alsa libnotify fd \
-    nnn bat ripgrep httpie sxiv firefox
+    nnn bat ripgrep httpie sxiv firefox zathura-cb transmission-gtk
 
 # Link dash to /bin/sh for performance boost.
 # Then link several font config files for better font display.
@@ -27,8 +27,7 @@ sudo install -Dm 644 other/dashbinsh.hook /usr/share/libalpm/hooks/
 sudo install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
 # Make several folders, including a Music and Images folder.
-mkdir -p $LINKDOT/config/mpd/playlists \
-    ~/.config ~/.aurpkgs ~/Images/Captures
+mkdir -p $LINKDOT/config/mpd/playlists ~/.config ~/.aurpkgs
 
 # Clone the aur packages being installed. Polybar and Oh-My-Zsh
 git clone https://aur.archlinux.org/oh-my-zsh-git.git ~/.aurpkgs/oh-my-zsh-git
