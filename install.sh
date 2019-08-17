@@ -26,7 +26,7 @@ sudo install -Dm 644 other/local.conf /etc/fonts/
 sudo install -Dm 644 other/dashbinsh.hook /usr/share/libalpm/hooks/
 sudo install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
-# Make several folders, including a Music and Images folder.
+# Make some folders needed for proper functionality.
 mkdir -p $LINKDOT/config/mpd/playlists ~/.config ~/.aurpkgs
 
 # Clone the aur packages being installed. Polybar and Oh-My-Zsh
