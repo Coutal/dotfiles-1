@@ -10,6 +10,7 @@ plugins=(
     cp
     sudo
     fancy-ctrl-z
+    vi-mode
 )
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
