@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SYSUSERNAME=toni
+
 # Export the path to this directory for later use in the script
 export LINKDOT=$PWD
 
@@ -9,9 +11,10 @@ sudo pacman -S ttf-joypixels ttf-croscore noto-fonts-cjk noto-fonts \
     alacritty alacritty-terminfo compton neofetch dash neovim cmus \
     feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf redshift \
     diff-so-fancy zsh-autosuggestions zsh-syntax-highlighting exa \
-    xorg-server xorg-xinit xorg-xprop pulseaudio-alsa libnotify fd \
+    xorg-server xorg-xinit xorg-xprop libnotify fd emacs blender \
     nnn bat ripgrep httpie sxiv firefox zathura-cb qbittorrent gimp \
-    krita obs-studio blender
+    krita obs-studio
+#realtime-privileges qtractor
 
 # Link dash to /bin/sh for performance boost.
 # Then link several font config files for better font display.
@@ -26,11 +29,16 @@ sudo install -Dm 644 other/freetype2.sh /etc/profile.d/
 sudo install -Dm 644 other/local.conf /etc/fonts/
 sudo install -Dm 644 other/dashbinsh.hook /usr/share/libalpm/hooks/
 sudo install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+#sudo install -Dm 644 other/99-realtime-privileges.conf /etc/security/limits.d/99-realtime-privileges.conf
+
+# Add self to realtime group. Needed for pro audio programs.
+#sudo gpasswd -a $SYSUSERNAME realtime
 
 # Make some folders needed for proper functionality.
 mkdir -p ~/.config ~/.aurpkgs
 
 # Clone the aur packages being installed. Polybar and Oh-My-Zsh
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://aur.archlinux.org/oh-my-zsh-git.git ~/.aurpkgs/oh-my-zsh-git
 git clone https://aur.archlinux.org/polybar.git ~/.aurpkgs/polybar
 
