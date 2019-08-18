@@ -6,11 +6,12 @@ export LINKDOT=$PWD
 # Install fonts and programs.
 sudo pacman -S ttf-joypixels ttf-croscore noto-fonts-cjk noto-fonts \
     ttf-fantasque-sans-mono ttf-linux-libertine rofi mpv fzf maim \
-    alacritty alacritty-terminfo compton mpd neofetch dash neovim \
-    ncmpcpp feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf \
+    alacritty alacritty-terminfo compton neofetch dash neovim cmus \
+    feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf redshift \
     diff-so-fancy zsh-autosuggestions zsh-syntax-highlighting exa \
     xorg-server xorg-xinit xorg-xprop pulseaudio-alsa libnotify fd \
-    nnn bat ripgrep httpie sxiv firefox zathura-cb transmission-gtk
+    nnn bat ripgrep httpie sxiv firefox zathura-cb qbittorrent gimp \
+    krita obs-studio blender
 
 # Link dash to /bin/sh for performance boost.
 # Then link several font config files for better font display.
@@ -27,7 +28,7 @@ sudo install -Dm 644 other/dashbinsh.hook /usr/share/libalpm/hooks/
 sudo install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
 # Make some folders needed for proper functionality.
-mkdir -p $LINKDOT/config/mpd/playlists ~/.config ~/.aurpkgs
+mkdir -p ~/.config ~/.aurpkgs
 
 # Clone the aur packages being installed. Polybar and Oh-My-Zsh
 git clone https://aur.archlinux.org/oh-my-zsh-git.git ~/.aurpkgs/oh-my-zsh-git
