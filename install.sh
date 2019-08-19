@@ -42,6 +42,8 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://aur.archlinux.org/oh-my-zsh-git.git ~/.aurpkgs/oh-my-zsh-git
 git clone https://aur.archlinux.org/polybar.git ~/.aurpkgs/polybar
 
+patch ~/.emacs.d/init.el < $LINKDOT/other/fix-spacemacs.patch
+
 cd ~/.aurpkgs/oh-my-zsh-git
 makepkg -si
 cd ~/.aurpkgs/polybar
