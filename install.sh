@@ -7,11 +7,11 @@ export LINKDOT=$PWD
 sudo pacman -S ttf-joypixels ttf-croscore noto-fonts-cjk noto-fonts \
     ttf-fantasque-sans-mono ttf-linux-libertine rofi mpv fzf maim \
     alacritty alacritty-terminfo compton neofetch dash neovim cmus \
-    feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf redshift \
+    feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf emacs fd \
     diff-so-fancy zsh-autosuggestions zsh-syntax-highlighting exa \
-    xorg-server xorg-xinit xorg-xprop libnotify fd blender krita \
-    nnn bat ripgrep httpie sxiv firefox zathura-cb qbittorrent gimp \
-    obs-studio pulseaudio-alsa emacs
+    xorg-server xorg-xinit xorg-xprop libnotify blender krita bat \
+    nnn ripgrep httpie sxiv firefox zathura-cb pulseaudio-alsa \
+    transmission-gtk obs-studio
 
 # Link dash to /bin/sh for performance boost.
 # Then link several font config files for better font display.
