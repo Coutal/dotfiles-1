@@ -9,9 +9,8 @@ sudo pacman -S ttf-joypixels ttf-croscore noto-fonts-cjk noto-fonts \
     alacritty alacritty-terminfo compton neofetch dash neovim cmus \
     feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf emacs fd \
     diff-so-fancy zsh-autosuggestions zsh-syntax-highlighting exa \
-    xorg-server xorg-xinit xorg-xprop libnotify blender krita bat \
-    nnn ripgrep httpie sxiv firefox zathura-cb pulseaudio-alsa \
-    transmission-gtk obs-studio
+    xorg-server xorg-xinit xorg-xprop libnotify firefox bat sxiv \
+    nnn ripgrep httpie zathura-cb pulseaudio-alsa transmission-gtk
 
 # Link dash to /bin/sh for performance boost.
 # Then link several font config files for better font display.
@@ -41,8 +40,6 @@ mkdir -p ~/.config ~/.aurpkgs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://aur.archlinux.org/oh-my-zsh-git.git ~/.aurpkgs/oh-my-zsh-git
 git clone https://aur.archlinux.org/polybar.git ~/.aurpkgs/polybar
-
-patch ~/.emacs.d/init.el < $LINKDOT/other/fix-spacemacs.patch
 
 cd ~/.aurpkgs/oh-my-zsh-git
 makepkg -si
