@@ -1,16 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 
 # Export the path to this directory for later use in the script
 export LINKDOT=$PWD
 
 # Install fonts and programs.
 sudo pacman -S ttf-joypixels ttf-croscore noto-fonts-cjk noto-fonts \
-    ttf-fantasque-sans-mono ttf-linux-libertine rofi mpv fzf maim \
+    ttf-fantasque-sans-mono rofi mpv fzf maim texlive-most lilypond \
     alacritty alacritty-terminfo compton neofetch dash neovim cmus \
     feh xclip sxhkd bspwm i3-gaps dunst zathura-pdf-mupdf emacs fd \
+    nnn ripgrep httpie zathura-cb pulseaudio-alsa transmission-gtk \
     diff-so-fancy zsh-autosuggestions zsh-syntax-highlighting exa \
     xorg-server xorg-xinit xorg-xprop libnotify firefox bat sxiv \
-    nnn ripgrep httpie zathura-cb pulseaudio-alsa transmission-gtk
+    obs-studio krita blender audacity
+
 
 # Link dash to /bin/sh for performance boost.
 # Then link several font config files for better font display.
@@ -34,13 +36,17 @@ sudo install -Dm 644 other/dashbinsh.hook /usr/share/libalpm/hooks/
 sudo install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
 # Make some folders needed for proper functionality.
-mkdir -p ~/.config ~/.aurpkgs
+mkdir -p ~/.config ~/.aurpkgs ~/.mozilla
+
+cp -r /mnt/archive/Home/Other/firefox ~/.mozilla
 
 # Get some unofficial programs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://aur.archlinux.org/oh-my-zsh-git.git ~/.aurpkgs/oh-my-zsh-git
 git clone https://aur.archlinux.org/polybar.git ~/.aurpkgs/polybar
 
+cd ~/.emacs.d
+git checkout develop
 cd ~/.aurpkgs/oh-my-zsh-git
 makepkg -si
 cd ~/.aurpkgs/polybar
